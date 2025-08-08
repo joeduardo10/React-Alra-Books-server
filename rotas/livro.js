@@ -1,15 +1,9 @@
 const { Router } = require("express");
+const { getLivros } = require("../controladores/livro");
 
 const router = Router();
 
-router.get('/', (req, res) => {
-    try{
-        res.send('Olá mundo Puta que o paril, me livrei da maldição')
-    }catch(error){
-        res.status(500)
-        res.send(error.message) 
-    }
-  });
+router.get('/', getLivros);
 
 router.patch('/', (req, res) => {
     res.send('você fez uma requisição PATCH')});
